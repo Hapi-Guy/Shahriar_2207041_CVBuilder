@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="cvbuilder.controllers.FormController" styleClass="root">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="header" style="-fx-padding: 10;">
+            <Label text="Create CV" styleClass="app-title" />
+        </HBox>
+    </top>
+    <center>
+        <GridPane hgap="10" vgap="10" styleClass="form-container" style="-fx-padding: 20;">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="25" />
+                <ColumnConstraints percentWidth="75" />
+            </columnConstraints>
+
+            <Label text="Full Name:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+            <TextField fx:id="fullNameField" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+            <Label text="Email:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+            <TextField fx:id="emailField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+            <Label text="Phone:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+            <TextField fx:id="phoneField" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+            <Label text="Address:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+            <TextArea fx:id="addressArea" prefRowCount="2" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+            <Label text="Education (one per line):" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+            <TextArea fx:id="educationArea" prefRowCount="4" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+
+            <Label text="Skills (one per line):" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+            <TextArea fx:id="skillsArea" prefRowCount="3" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+
+            <Label text="Work Experience (one per line):" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+            <TextArea fx:id="experienceArea" prefRowCount="4" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+
+            <Label text="Projects (one per line):" GridPane.rowIndex="7" GridPane.columnIndex="0" />
+            <TextArea fx:id="projectsArea" prefRowCount="3" GridPane.rowIndex="7" GridPane.columnIndex="1" />
+
+            <HBox spacing="10" GridPane.rowIndex="8" GridPane.columnIndex="1" alignment="CENTER_RIGHT">
+                <Button text="Generate CV" onAction="#onGenerateCV" styleClass="primary-button" />
+            </HBox>
+        </GridPane>
+    </center>
+</BorderPane>

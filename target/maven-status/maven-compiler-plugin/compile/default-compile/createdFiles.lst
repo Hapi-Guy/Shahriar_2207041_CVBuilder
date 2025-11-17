@@ -1,0 +1,5 @@
+cvbuilder\MainApp.class
+cvbuilder\controllers\HomeController.class
+cvbuilder\model\CV.class
+cvbuilder\controllers\FormController.class
+cvbuilder\controllers\PreviewController.class

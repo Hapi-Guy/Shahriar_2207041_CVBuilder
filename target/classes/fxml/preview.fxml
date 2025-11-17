@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane styleClass="root" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="cvbuilder.controllers.PreviewController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 10;" styleClass="header">
+            <Label styleClass="app-title" text="CV Preview" />
+        </HBox>
+    </top>
+    <center>
+        <HBox spacing="0" styleClass="preview-container">
+            <!-- LEFT SIDEBAR (250px) - Dark background with contact info and skills -->
+            <VBox prefWidth="250" spacing="15" style="-fx-padding: 25 20;" styleClass="sidebar">
+                
+                <!-- CONTACT SECTION -->
+                <VBox spacing="8">
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <FontAwesomeIconView glyphName="USER" size="18" styleClass="sidebar-icon" />
+                        <Label styleClass="section-title" text="CONTACT" />
+                    </HBox>
+                    <Separator styleClass="sidebar-separator" />
+                    
+                    <!-- Email -->
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <FontAwesomeIconView glyphName="ENVELOPE" size="14" styleClass="sidebar-icon-small" />
+                        <Label fx:id="emailLabel" styleClass="contact-info" wrapText="true" />
+                    </HBox>
+                    
+                    <!-- Phone -->
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <FontAwesomeIconView glyphName="PHONE" size="14" styleClass="sidebar-icon-small" />
+                        <Label fx:id="phoneLabel" styleClass="contact-info" />
+                    </HBox>
+                    
+                    <!-- Address -->
+                    <HBox spacing="8" alignment="TOP_LEFT">
+                        <FontAwesomeIconView glyphName="MAP_MARKER" size="14" styleClass="sidebar-icon-small" />
+                        <Label fx:id="addressLabel" styleClass="contact-info" wrapText="true" />
+                    </HBox>
+                </VBox>
+
+                <!-- SKILLS SECTION -->
+                <VBox spacing="8">
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <FontAwesomeIconView glyphName="CODE" size="18" styleClass="sidebar-icon" />
+                        <Label styleClass="section-title" text="SKILLS" />
+                    </HBox>
+                    <Separator styleClass="sidebar-separator" />
+                    <VBox fx:id="skillsBox" spacing="6" style="-fx-padding: 5 0 0 0;" />
+                </VBox>
+
+            </VBox>
+
+            <!-- RIGHT MAIN PANEL - White background with main content -->
+            <VBox spacing="15" style="-fx-padding: 30 35;" styleClass="main-content" HBox.hgrow="ALWAYS">
+                
+                <!-- NAME (Large heading) -->
+                <Label fx:id="nameLabel" styleClass="cv-name" />
+
+                <!-- EDUCATION SECTION -->
+                <VBox spacing="10">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <FontAwesomeIconView glyphName="GRADUATION_CAP" size="20" styleClass="section-icon" />
+                        <Label styleClass="section-header" text="EDUCATION" />
+                    </HBox>
+                    <Separator styleClass="main-separator" />
+                    <VBox fx:id="educationBox" spacing="12" style="-fx-padding: 5 0 0 0;" />
+                </VBox>
+
+                <!-- EXPERIENCE SECTION -->
+                <VBox spacing="10">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <FontAwesomeIconView glyphName="BRIEFCASE" size="20" styleClass="section-icon" />
+                        <Label styleClass="section-header" text="PROFESSIONAL EXPERIENCE" />
+                    </HBox>
+                    <Separator styleClass="main-separator" />
+                    <VBox fx:id="experienceBox" spacing="12" style="-fx-padding: 5 0 0 0;" />
+                </VBox>
+
+                <!-- PROJECTS SECTION -->
+                <VBox spacing="10">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <FontAwesomeIconView glyphName="ROCKET" size="20" styleClass="section-icon" />
+                        <Label styleClass="section-header" text="PROJECTS" />
+                    </HBox>
+                    <Separator styleClass="main-separator" />
+                    <VBox fx:id="projectsBox" spacing="12" style="-fx-padding: 5 0 0 0;" />
+                </VBox>
+
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

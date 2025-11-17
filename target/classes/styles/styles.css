@@ -1,0 +1,152 @@
+/* Root styling */
+.root {
+    -fx-background-color: #f5f5f5;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Header styling */
+.header {
+    -fx-background-color: linear-gradient(to right, #2c3e50, #3498db);
+    -fx-padding: 15;
+}
+
+.app-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/* Welcome screen */
+.welcome-text {
+    -fx-font-size: 18px;
+    -fx-text-fill: #34495e;
+}
+
+/* Buttons */
+.primary-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.primary-button:pressed {
+    -fx-background-color: #21618c;
+}
+
+/* Form styling */
+.form-container {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+}
+
+/* Preview styling */
+.preview-container {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15, 0, 0, 3);
+}
+
+/* Sidebar (Left column) */
+.sidebar {
+    -fx-background-color: #34495e;
+    -fx-min-width: 250px;
+    -fx-max-width: 250px;
+}
+
+.sidebar .label {
+    -fx-text-fill: white;
+}
+
+.section-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ecf0f1;
+    -fx-letter-spacing: 1px;
+}
+
+.contact-info {
+    -fx-font-size: 11px;
+    -fx-text-fill: #bdc3c7;
+    -fx-wrap-text: true;
+}
+
+/* Sidebar icons */
+.sidebar-icon {
+    -fx-fill: #3498db;
+}
+
+.sidebar-icon-small {
+    -fx-fill: #95a5a6;
+}
+
+/* Sidebar separator */
+.sidebar-separator {
+    -fx-background-color: #2c3e50;
+    -fx-pref-height: 1px;
+}
+
+/* Main content (Right column) */
+.main-content {
+    -fx-background-color: white;
+    -fx-padding: 30 35;
+}
+
+.cv-name {
+    -fx-font-size: 45px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 0 0 20 0;
+    -fx-border-color: #3498db;
+    -fx-border-width: 0 0 3 0;
+}
+
+.section-header {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-letter-spacing: 0.5px;
+}
+
+/* Section icons in main panel */
+.section-icon {
+    -fx-fill: #3498db;
+}
+
+/* Main panel separator */
+.main-separator {
+    -fx-background-color: #e0e0e0;
+    -fx-pref-height: 1px;
+}
+
+/* CV Items (dynamic content) */
+.cv-item {
+    -fx-font-size: 13px;
+    -fx-text-fill: #34495e;
+    -fx-padding: 3 0;
+    -fx-wrap-text: true;
+}
+
+/* Text fields and text areas */
+.text-field, .text-area {
+    -fx-background-radius: 5;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2;
+}
+
+/* Labels in forms (lower specificity, won't override cv-name) */
+.form-container .label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #2c3e50;
+}
