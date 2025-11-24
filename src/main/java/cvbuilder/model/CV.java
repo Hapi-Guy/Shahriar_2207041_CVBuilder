@@ -1,17 +1,17 @@
 package cvbuilder.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class CV {
     private String fullName;
     private String email;
     private String phone;
     private String address;
-    private List<String> education = new ArrayList<>();
-    private List<String> skills = new ArrayList<>();
-    private List<String> experience = new ArrayList<>();
-    private List<String> projects = new ArrayList<>();
+    private ObservableList<String> education = FXCollections.observableArrayList();
+    private ObservableList<String> skills = FXCollections.observableArrayList();
+    private ObservableList<String> experience = FXCollections.observableArrayList();
+    private ObservableList<String> projects = FXCollections.observableArrayList();
 
     // getters and setters
     public String getFullName() { return fullName; }
@@ -22,8 +22,8 @@ public class CV {
     public void setPhone(String phone) { this.phone = phone; }
     public String getAddress() { return address; }
     public void setAddress(String address) { this.address = address; }
-    public List<String> getEducation() { return education; }
-    public List<String> getSkills() { return skills; }
-    public List<String> getExperience() { return experience; }
-    public List<String> getProjects() { return projects; }
+    public ObservableList<String> getEducation() { return education; }
+    public ObservableList<String> getSkills() { return skills; }
+    public ObservableList<String> getExperience() { return experience; }
+    public ObservableList<String> getProjects() { return projects; }
 }
