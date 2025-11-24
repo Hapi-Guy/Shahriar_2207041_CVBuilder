@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.BorderPane?>
@@ -11,6 +12,9 @@
     <top>
         <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 10;" styleClass="header">
             <Label styleClass="app-title" text="CV Preview" />
+            <HBox HBox.hgrow="ALWAYS" />
+            <Button onAction="#onSaveCV" styleClass="primary-button" text="Save to Database" />
+            <Button text="← Back to Home" onAction="#onBackToHome" />
         </HBox>
     </top>
     <center>

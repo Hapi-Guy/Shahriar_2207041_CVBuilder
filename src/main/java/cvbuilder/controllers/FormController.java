@@ -24,6 +24,23 @@ public class FormController {
     @FXML private TextArea experienceArea;
     @FXML private TextArea projectsArea;
 
+    private Integer cvId = null; // null = new CV, number = editing existing CV
+
+    /**
+     * Load existing CV data into form for editing
+     */
+    public void loadCV(CV cv, int id) {
+        this.cvId = id;
+        fullNameField.setText(cv.getFullName());
+        emailField.setText(cv.getEmail());
+        phoneField.setText(cv.getPhone());
+        addressArea.setText(cv.getAddress());
+        educationArea.setText(String.join("\n", cv.getEducation()));
+        skillsArea.setText(String.join("\n", cv.getSkills()));
+        experienceArea.setText(String.join("\n", cv.getExperience()));
+        projectsArea.setText(String.join("\n", cv.getProjects()));
+    }
+
     @FXML
     private void onGenerateCV(ActionEvent event) throws IOException {
         // Validate Full Name
@@ -81,7 +98,11 @@ public class FormController {
         Parent root = loader.load();
         // pass cv to preview controller
         PreviewController ctrl = loader.getController();
-        ctrl.setCv(cv);
+        if (cvId != null) {
+            ctrl.setCv(cv, cvId); // Pass existing CV ID for update
+        } else {
+            ctrl.setCv(cv); // New CV
+        }
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.getScene().setRoot(root);
@@ -101,5 +122,13 @@ public class FormController {
         alert.setHeaderText("Invalid Input");
         alert.setContentText(message);
         alert.showAndWait();
+    }
+    
+    @FXML
+    private void onBackToHome(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.getScene().setRoot(root);
     }
 }

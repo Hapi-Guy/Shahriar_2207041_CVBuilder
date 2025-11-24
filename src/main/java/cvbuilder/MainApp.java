@@ -1,5 +1,6 @@
 package cvbuilder;
 
+import cvbuilder.database.DatabaseHelper;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,6 +10,9 @@ import javafx.stage.Stage;
 public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
+        // Initialize database table on startup
+        DatabaseHelper.createTable();
+        
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root, 900, 600);

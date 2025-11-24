@@ -16,4 +16,12 @@ public class HomeController {
         Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
         stage.getScene().setRoot(root);
     }
+    
+    @FXML
+    private void onLoadCVs(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/cvlist.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.getScene().setRoot(root);
+    }
 }

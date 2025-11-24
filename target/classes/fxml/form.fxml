@@ -5,6 +5,8 @@
     <top>
         <HBox alignment="CENTER_LEFT" spacing="10" styleClass="header" style="-fx-padding: 10;">
             <Label text="Create CV" styleClass="app-title" />
+            <HBox HBox.hgrow="ALWAYS" />
+            <Button text="← Back to Home" onAction="#onBackToHome" />
         </HBox>
     </top>
     <center>
