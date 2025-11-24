@@ -62,7 +62,7 @@ public class DatabaseHelper {
             """;
         
         try (Connection conn = connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             
             pstmt.setString(1, cv.getFullName());
             pstmt.setString(2, cv.getEmail());
@@ -73,13 +73,13 @@ public class DatabaseHelper {
             pstmt.setString(7, listToJson(cv.getExperience()));
             pstmt.setString(8, listToJson(cv.getProjects()));
             
-            int affectedRows = pstmt.executeUpdate();
+            pstmt.executeUpdate();
             
-            if (affectedRows > 0) {
-                try (ResultSet rs = pstmt.getGeneratedKeys()) {
-                    if (rs.next()) {
-                        return rs.getInt(1); // Return generated ID
-                    }
+            // SQLite way to get last inserted ID
+            try (Statement stmt = conn.createStatement();
+                 ResultSet rs = stmt.executeQuery("SELECT last_insert_rowid()")) {
+                if (rs.next()) {
+                    return rs.getInt(1);
                 }
             }
         }
